@@ -1,0 +1,169 @@
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1d3557;
+}
+.bg-light {
+  background-color: #f1e6e6;
+}
+
+
+.split-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  padding: 40px 60px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.form-panel {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+.form-panel h2 { margin: 0 0 6px 0; font-size: 26px; }
+.subtitle { margin: 0 0 30px 0; color: #6c757d; font-size: 14px; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+}
+.form-group input[type="text"] {
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.blood-type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.grid-item {
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 14px 0;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+.grid-item.selected {
+  background-color: #1d3557;
+  color: #ffffff;
+  border-color: #1d3557;
+}
+
+.urgency-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.urgency-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border-radius: 8px;
+  border-left: 5px solid #ced4da;
+  background: #fdfdfd;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.urgency-card input[type="radio"] {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.urgency-card.active { background-color: #fffafb; }
+.border-critical.active { border-left-color: #e63946; }
+.border-urgent.active { border-left-color: #ff9f1c; }
+.border-normal.active { border-left-color: #6c757d; }
+.urgency-title { font-weight: 700; font-size: 14px; }
+.title-critical { color: #e63946; }
+.title-urgent { color: #ff9f1c; }
+.title-normal { color: #6c757d; }
+.urgency-desc { font-size: 12px; color: #6c757d; margin-top: 2px; }
+
+
+.counter-input-container {
+  display: flex;
+  max-width: 130px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.counter-btn {
+  background: #f8f9fa;
+  border: none;
+  width: 42px;
+  height: 38px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+.counter-input-container input {
+  width: 46px;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.btn-auth {
+  background-color: #e63946;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+.preview-panel { padding-top: 15px; }
+.preview-label { font-size: 11px; font-weight: 700; color: #6c757d; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.request-preview-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  border-left: 6px solid #6c757d;
+}
+.request-preview-card.border-critical { border-left-color: #e63946; }
+.request-preview-card.border-urgent { border-left-color: #ff9f1c; }
+.request-preview-card.border-normal { border-left-color: #6c757d; }
+
+.badge { display: inline-block; padding: 4px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; margin-bottom: 16px; }
+.badge-critical { background-color: #fff5f5; color: #e63946; }
+.badge-urgent { background-color: #fffbeb; color: #ff9f1c; }
+.badge-normal { background-color: #f7fafc; color: #6c757d; }
+
+.request-info { display: flex; align-items: center; gap: 20px; }
+.blood-badge-large { background-color: #1d3557; color: #ffffff; font-size: 24px; font-weight: 800; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.request-info h3 { margin: 0 0 4px 0; font-size: 18px; }
+.request-info p { margin: 0; color: #6c757d; font-size: 13px; }
+
+.error-message { color: #e63946; font-size: 12px; margin-top: 2px; }

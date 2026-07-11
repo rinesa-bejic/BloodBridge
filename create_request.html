@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodBridge - Create Request</title>
+     <link rel="stylesheet" href="create_request.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="split-container">
+        <main class="form-panel">
+            <h2>Create Blood Request</h2>
+            <p class="subtitle">Fill out details to alert matches within your radius.</p>
+
+            <form id="bloodRequestForm" novalidate>
+                <div class="form-group">
+                    <label>Blood Type Required</label>
+                    <div class="blood-type-grid" id="bloodTypeGrid">
+                        <div class="grid-item" data-value="A+">A+</div>
+                        <div class="grid-item" data-value="A-">A-</div>
+                        <div class="grid-item" data-value="B+">B+</div>
+                        <div class="grid-item" data-value="B-">B-</div>
+                        <div class="grid-item" data-value="AB+">AB+</div>
+                        <div class="grid-item" data-value="AB-">AB-</div>
+                        <div class="grid-item" data-value="O+">O+</div>
+                        <div class="grid-item" data-value="O-">O-</div>
+                    </div>
+                    <span class="error-message" id="bloodTypeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Urgency Level</label>
+                    <div class="urgency-selector">
+                        <label class="urgency-card border-critical">
+                            <input type="radio" name="urgency" value="Critical" required>
+                            <span class="urgency-title title-critical">Critical</span>
+                            <span class="urgency-desc">Immediate life risk (30 mins)</span>
+                        </label>
+                        <label class="urgency-card border-urgent">
+                            <input type="radio" name="urgency" value="Urgent">
+                            <span class="urgency-title title-urgent">Urgent</span>
+                            <span class="urgency-desc">Needed within 2–4 hours</span>
+                        </label>
+                        <label class="urgency-card border-normal">
+                            <input type="radio" name="urgency" value="Normal">
+                            <span class="urgency-title title-normal">Normal</span>
+                            <span class="urgency-desc">Needed within 24–48 hours</span>
+                        </label>
+                    </div>
+                    <span class="error-message" id="urgencyError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="locationInput">Reporting Location</label>
+                    <input type="text" id="locationInput" placeholder="e.g., City General Hospital" required>
+                    <span class="error-message" id="locationError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Blood Units Required (Bags)</label>
+                    <div class="counter-input-container">
+                        <button type="button" class="counter-btn" id="decrementUnits">-</button>
+                        <input type="number" id="unitCount" value="1" min="1" max="25" readonly>
+                        <button type="button" class="counter-btn" id="incrementUnits">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalDetails">Additional Context / Facility Instructions</label>
+                    <textarea id="additionalDetails" rows="3" placeholder="e.g., Room 304, post-surgery window, bring ID..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-auth">Submit Blood Request</button>
+            </form>
+        </main>
+
+        <aside class="preview-panel">
+            <p class="preview-label">Live Request Preview</p>
+            <div class="request-preview-card border-normal" id="livePreviewCard">
+                <div class="badge badge-normal" id="previewBadge">NORMAL</div>
+                <div class="request-info">
+                    <span class="blood-badge-large" id="previewBloodBadge">?</span>
+                    <div>
+                        <h3 id="previewLocationName">No Location Set</h3>
+                        <p id="previewUnitLabel">1 Unit required • Just now</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="create_request.js"></script>
+</body>
+</html>
