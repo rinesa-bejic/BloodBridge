@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodBridge | Profile</title>
+
+    <link rel="stylesheet" href="profile.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+      <div class="logo">Blood<span>Bridge</span></div>
+
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#">Requests</a></li>
+        <li><a href="#" class="active">Profile</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- ================= PROFILE HEADER ================= -->
+
+    <section class="profile-header">
+      <div class="profile-card">
+        <div class="profile-image">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <h1>Gezearta Abazi</h1>
+
+        <p>Active Blood Donor</p>
+
+        <div class="blood-type">Blood Type: <strong>O+</strong></div>
+      </div>
+    </section>
+
+    <!-- ================= PROFILE CONTENT ================= -->
+
+    <section class="profile-content">
+      <div class="left-column">
+        <!-- Personal Information -->
+
+        <div class="card">
+          <h2>Personal Information</h2>
+
+          <form>
+            <div class="input-group">
+              <label>First Name</label>
+              <input type="text" value="Gezearta" />
+            </div>
+
+            <div class="input-group">
+              <label>Last Name</label>
+              <input type="text" value="Abazi" />
+            </div>
+
+            <div class="input-group">
+              <label>Email</label>
+              <input type="email" value="geze@email.com" />
+            </div>
+
+            <div class="input-group">
+              <label>Phone</label>
+              <input type="text" value="+383 44 123 456" />
+            </div>
+
+            <div class="input-group">
+              <label>City</label>
+              <input type="text" value="Prishtina" />
+            </div>
+
+            <button class="save-btn">Save Changes</button>
+          </form>
+        </div>
+
+        <!-- Notification Radius -->
+
+        <div class="card">
+          <h2>Notification Radius</h2>
+
+          <p>Receive emergency requests within:</p>
+
+          <input type="range" min="5" max="50" value="15" />
+
+          <h3>15 km</h3>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <!-- Donation Statistics -->
+
+        <div class="card">
+          <h2>Your Statistics</h2>
+
+          <div class="stats">
+            <div>
+              <h1>8</h1>
+              <p>Donations</p>
+            </div>
+
+            <div>
+              <h1>24</h1>
+              <p>Lives Saved</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Donation History -->
+
+        <div class="card">
+          <h2>Donation History</h2>
+
+          <div class="history">
+            <div class="history-item">
+              <i class="fa-solid fa-circle-check"></i>
+
+              <div>
+                <h4>July 12, 2026</h4>
+
+                <p>Prishtina Regional Hospital</p>
+              </div>
+            </div>
+
+            <div class="history-item">
+              <i class="fa-solid fa-circle-check"></i>
+
+              <div>
+                <h4>April 18, 2026</h4>
+
+                <p>Peja Hospital</p>
+              </div>
+            </div>
+
+            <div class="history-item">
+              <i class="fa-solid fa-circle-check"></i>
+
+              <div>
+                <h4>January 30, 2026</h4>
+
+                <p>Gjilan Hospital</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings -->
+
+        <div class="card">
+          <h2>Settings</h2>
+
+          <div class="setting">
+            <label>
+              <input type="checkbox" checked />
+
+              Email Notifications
+            </label>
+          </div>
+
+          <div class="setting">
+            <label>
+              <input type="checkbox" checked />
+
+              SMS Notifications
+            </label>
+          </div>
+
+          <div class="setting">
+            <label>
+              <input type="checkbox" />
+
+              Share Location Automatically
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 BloodBridge. Saving lives together.</p>
+    </footer>
+  </body>
+</html>
