@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BloodBridge Patient Dashboard</title>
+
+    <link rel="stylesheet" href="patient-dashboard.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+      <div class="logo">Blood<span>Bridge</span></div>
+
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">My Requests</a></li>
+        <li><a href="#">Find Donors</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          Welcome Back,
+          <span>Gezearta!</span>
+        </h1>
+
+        <p>
+          Manage your blood requests, connect with available donors, and track
+          the progress of your emergency needs.
+        </p>
+
+        <button class="primary-btn">Create Blood Request</button>
+      </div>
+    </section>
+
+    <!-- ================= QUICK ACTIONS ================= -->
+
+    <section class="quick-actions">
+      <h2>Quick Actions</h2>
+
+      <div class="action-container">
+        <div class="action-card">
+          <i class="fa-solid fa-droplet"></i>
+
+          <h3>Request Blood</h3>
+
+          <p>Create a new emergency blood request.</p>
+        </div>
+
+        <div class="action-card">
+          <i class="fa-solid fa-user-group"></i>
+
+          <h3>Find Donors</h3>
+
+          <p>View compatible donors nearby.</p>
+        </div>
+
+        <div class="action-card">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+
+          <h3>Request History</h3>
+
+          <p>Check your previous blood requests.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CURRENT REQUEST ================= -->
+
+    <section class="requests">
+      <h2>Your Active Request</h2>
+
+      <div class="request-card">
+        <div class="left">
+          <div class="blood-circle">O-</div>
+
+          <div>
+            <h3>Emergency Blood Request</h3>
+
+            <p>
+              <i class="fa-solid fa-location-dot"></i>
+
+              Prishtina Regional Hospital
+            </p>
+
+            <p>Needed: 2 Units</p>
+          </div>
+        </div>
+
+        <div class="right">
+          <span class="critical"> Critical </span>
+
+          <button>View Details</button>
+        </div>
+      </div>
+
+      <div class="request-card">
+        <div class="left">
+          <div class="blood-circle">A+</div>
+
+          <div>
+            <h3>Previous Request</h3>
+
+            <p>
+              <i class="fa-solid fa-hospital"></i>
+
+              Main University Clinic
+            </p>
+
+            <p>Status: Completed</p>
+          </div>
+        </div>
+
+        <div class="right">
+          <span class="completed"> Completed </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DONOR MATCHES ================= -->
+
+    <section class="matches">
+      <h2>Matched Donors</h2>
+
+      <div class="match-container">
+        <div class="match-card">
+          <i class="fa-solid fa-user"></i>
+
+          <div>
+            <h3>Anita Veliu</h3>
+
+            <p>Blood Type: O-</p>
+
+            <p>Distance: 2.4 km</p>
+          </div>
+
+          <button>Contact</button>
+        </div>
+
+        <div class="match-card">
+          <i class="fa-solid fa-user"></i>
+
+          <div>
+            <h3>Enis Azemi</h3>
+
+            <p>Blood Type: O-</p>
+
+            <p>Distance: 5 km</p>
+          </div>
+
+          <button>Contact</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats">
+      <h2>Your Statistics</h2>
+
+      <div class="stats-container">
+        <div class="stat-card">
+          <h1>3</h1>
+
+          <p>Total Requests</p>
+        </div>
+
+        <div class="stat-card">
+          <h1>2</h1>
+
+          <p>Successful Matches</p>
+        </div>
+
+        <div class="stat-card">
+          <h1>1</h1>
+
+          <p>Active Request</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACTIVITY ================= -->
+
+    <section class="activity">
+      <h2>Recent Activity</h2>
+
+      <div class="activity-card">
+        <i class="fa-solid fa-bell"></i>
+
+        <div>
+          <h3>Request Created</h3>
+
+          <p>Your emergency blood request has been sent to nearby donors.</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <i class="fa-solid fa-user-check"></i>
+
+        <div>
+          <h3>Donor Matched</h3>
+
+          <p>A compatible donor has accepted your request.</p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <i class="fa-solid fa-heart"></i>
+
+        <div>
+          <h3>Blood Received</h3>
+
+          <p>Your blood request was successfully completed.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 BloodBridge. Saving lives together.</p>
+    </footer>
+  </body>
+</html>
