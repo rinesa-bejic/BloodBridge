@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const showRegister = document.getElementById("showRegister");
   const showLogin = document.getElementById("showLogin");
 
+  // Switch between Login and Register
   showRegister.addEventListener("click", function (e) {
     e.preventDefault();
     loginCard.classList.add("hidden");
@@ -18,23 +19,75 @@ document.addEventListener("DOMContentLoaded", function () {
     resetErrors();
   });
 
-  const registerForm = document.getElementById("registerForm");
+  // Regular Expressions
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
 
-  registerForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+  // ==========================
+  // LOGIN VALIDATION
+  // ==========================
+  const loginForm = document.getElementById("loginForm");
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
     let isValid = true;
-
     resetErrors();
 
-    const fullName = document.getElementById("fullName");
-    if (fullName.value.trim() === "") {
-      showError(fullName, "fullNameError", "Full Name is required.");
+    const email = document.getElementById("loginEmail");
+    const password = document.getElementById("loginPassword");
+
+    if (email.value.trim() === "") {
+      showError(email, "loginEmailError", "Email is required.");
+      isValid = false;
+    } else if (!emailRegex.test(email.value.trim())) {
+      showError(
+        email,
+        "loginEmailError",
+        "Please enter a valid email address.",
+      );
       isValid = false;
     }
 
+    if (password.value.trim() === "") {
+      showError(password, "loginPasswordError", "Password is required.");
+      isValid = false;
+    }
+
+    if (isValid) {
+      alert("Login validation passed!");
+    }
+  });
+
+  // ==========================
+  // REGISTER VALIDATION
+  // ==========================
+  const registerForm = document.getElementById("registerForm");
+
+  registerForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    resetErrors();
+
+    const fullName = document.getElementById("fullName");
     const email = document.getElementById("registerEmail");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value.trim())) {
+    const bloodType = document.getElementById("bloodType");
+    const role = document.getElementById("role");
+    const password = document.getElementById("registerPassword");
+    const confirmPassword = document.getElementById("confirmPassword");
+
+    // Full Name
+    if (fullName.value.trim().length < 2) {
+      showError(fullName, "fullNameError", "Please enter your full name.");
+      isValid = false;
+    }
+
+    // Email
+    if (email.value.trim() === "") {
+      showError(email, "registerEmailError", "Email is required.");
+      isValid = false;
+    } else if (!emailRegex.test(email.value.trim())) {
       showError(
         email,
         "registerEmailError",
@@ -43,30 +96,40 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    const bloodType = document.getElementById("bloodType");
+    // Blood Type
     if (bloodType.value === "") {
       showError(bloodType, "bloodTypeError", "Please select your blood type.");
       isValid = false;
     }
 
-    const role = document.getElementById("role");
+    // Role
     if (role.value === "") {
-      showError(role, "roleError", "Please select a user role.");
+      showError(role, "roleError", "Please select a role.");
       isValid = false;
     }
 
-    const password = document.getElementById("registerPassword");
-    if (password.value.length < 8) {
+    // Password
+    if (password.value.trim() === "") {
+      showError(password, "registerPasswordError", "Password is required.");
+      isValid = false;
+    } else if (!passwordRegex.test(password.value)) {
       showError(
         password,
         "registerPasswordError",
-        "Password must be at least 8 characters long.",
+        "Password must contain at least 8 characters, one uppercase letter and one number.",
       );
       isValid = false;
     }
 
-    const confirmPassword = document.getElementById("confirmPassword");
-    if (password.value !== confirmPassword.value) {
+    // Confirm Password
+    if (confirmPassword.value.trim() === "") {
+      showError(
+        confirmPassword,
+        "confirmPasswordError",
+        "Please confirm your password.",
+      );
+      isValid = false;
+    } else if (password.value !== confirmPassword.value) {
       showError(
         confirmPassword,
         "confirmPasswordError",
@@ -76,12 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (isValid) {
-      alert(
-        "🚀 Client validation passed! Sending data to BloodBridge Cognito/Auth Pipeline...",
-      );
-      // Task 3 do të merret me ruajtjen e tokenit këtu
+      alert("Registration validation passed!");
     }
   });
+
+  // ==========================
+  // Helper Functions
+  // ==========================
 
   function showError(inputElement, errorSpanId, message) {
     inputElement.classList.add("input-error");

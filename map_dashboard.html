@@ -1,32 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BloodBridge - Live Map Monitor</title>
-    <link rel="stylesheet" href="map_dashboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-  
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="map_dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-logo"><a href="landing.html">BloodBridge</a></div>
-        <ul class="nav-links">
-            <li><a href="map_dashboard.html" class="active">Live Map</a></li>
-            <li><a href="create_request.html">New Request</a></li>
-        </ul>
-        <button class="nav-btn">Get started</button>
+      <div class="nav-logo"><a href="index.html">BloodBridge</a></div>
+      <ul class="nav-links">
+        <li><a href="map_dashboard.html" class="active">Live Map</a></li>
+        <li><a href="create_request.html">New Request</a></li>
+      </ul>
+      <button class="nav-btn">Get started</button>
     </nav>
 
     <div class="full-map-wrapper">
-        <div id="interactiveMap"></div>
+      <div id="interactiveMap"></div>
     </div>
 
-    
     <script src="map_dashboard.js"></script>
-</body>
+  </body>
 </html>

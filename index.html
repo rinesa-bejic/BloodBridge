@@ -12,18 +12,23 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="nav-logo">BloodBridge</div>
-      <ul class="nav-links">
-        <li><a href="#dashboard">Dashboard</a></li>
+      <div class="nav-logo">
+        <img src="images/logo.png" alt="BloodBridge Logo" />
+      </div>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="map_dashboard.html">Dashboard</a></li>
         <li><a href="#how-it-works">How it Works</a></li>
         <li><a href="#urgent-requests">Urgent Requests</a></li>
         <li><a href="#stats">Our Impact</a></li>
-        <li><a href="#requests">Requests</a></li>
-        <li><a href="#profile">Profile</a></li>
+        <li><a href="profile.html">Profile</a></li>
       </ul>
-      <a href="login_register.html"
-        ><button class="nav-btn">Get Started</button></a
-      >
+
+      <div class="nav-actions">
+        <a href="create_request.html" class="btn-primary-nav">Request Blood</a>
+        <a href="login_register.html" class="btn-login">Login</a>
+      </div>
     </nav>
 
     <header class="hero-section">
@@ -49,15 +54,17 @@
       <div class="stats-grid">
         <div class="stat-card">
           <h3>1,250+</h3>
-          <p>Active Donors</p>
+          <p>Donors</p>
         </div>
+
         <div class="stat-card">
           <h3>3,480</h3>
-          <p>Total Lives Saved</p>
+          <p>Lives Saved</p>
         </div>
+
         <div class="stat-card">
-          <h3>45</h3>
-          <p>Partner Hospitals</p>
+          <h3>785</h3>
+          <p>Cases</p>
         </div>
       </div>
     </section>
@@ -133,5 +140,6 @@
         Program.
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
